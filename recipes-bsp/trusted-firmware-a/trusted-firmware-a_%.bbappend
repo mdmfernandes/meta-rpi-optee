@@ -1,4 +1,4 @@
-# Tell ATF that this machine is compatible
+# Tell ATF that raspberrypi4-64-optee is a compatible machine
 COMPATIBLE_MACHINE = "raspberrypi4-64-optee"
 
 # coreutils-native is required for the "truncate" command
@@ -19,5 +19,4 @@ do_deploy:append() {
     cat ${WORKDIR}/bl31-pad.tmp ${RECIPE_SYSROOT}/${nonarch_base_libdir}/firmware/tee-pager_v2.bin > ${DEPLOYDIR}/${BOOTFILES_DIR_NAME}/bl31-optee.bin
 }
 
-#addtask create_bl31_optee after do_deploy
 do_deploy[dirs] += "${DEPLOYDIR}/${BOOTFILES_DIR_NAME}"

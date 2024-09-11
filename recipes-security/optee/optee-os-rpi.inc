@@ -8,7 +8,11 @@ SRC_URI:append = " \
     file://0001-add-support-for-rpi4.patch \
 "
 
+# CFG_CORE_ARM64_PA_BITS: number of bits required to to initialize the largest physical address that we
+#   need to map. 32 bits -> 4 GB, 33 bits -> 8 GB.
+# CFG_DT: non-secure and secure devices trees can be accessed by OPTEE core to get some platform
+#   configuration information.
 EXTRA_OEMAKE += " \
-    CFG_DT=y \
     CFG_CORE_ARM64_PA_BITS=33 \
+    CFG_DT=y \
 "
