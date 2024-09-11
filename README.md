@@ -4,11 +4,9 @@ WARNING: Currently it only supports RaspberryPi 64-bit
 
 ## Dependencies
 
-...
-
-## Add meta-rpi-optee to bblayers
-
-...
+- [openembedded-core](https://git.openembedded.org/openembedded-core)
+- [meta-arm](https://git.yoctoproject.org/meta-arm)
+- [meta-raspberrypi](https://git.yoctoproject.org/meta-raspberrypi)
 
 ## Build image
 
