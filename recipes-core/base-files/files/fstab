@@ -1,0 +1,6 @@
+/dev/mmcblk0p1       /boot                vfat       defaults                                   0   2
+/dev/mmcblo0p2       /                    ext4       defaults,noatime                           0   1
+proc                 /proc                proc       defaults                                   0   0
+devpts               /dev/pts             devpts     mode=0620,ptmxmode=0666,gid=5              0   0
+tmpfs                /run                 tmpfs      mode=0755,noexec,nodev,nosuid,strictatime  0   0
+tmpfs                /var/volatile        tmpfs      defaults                                   0   0
