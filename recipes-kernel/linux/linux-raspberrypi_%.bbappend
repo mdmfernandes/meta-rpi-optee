@@ -5,7 +5,7 @@ SRC_URI:append = " \
     file://dto/optee-fix.dts \
 "
 
-# Add custom dts files to the kernel dts overlays directory, for compiling them during do_compile
+# Add custom dts files to the kernel dts overlays source, for compiling them during do_compile
 do_kernel_add_custom_overlays() {
  cp ${WORKDIR}/dto/optee-fix.dts ${S}/arch/arm64/boot/dts/overlays
 }

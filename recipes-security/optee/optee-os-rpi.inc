@@ -12,7 +12,9 @@ SRC_URI:append = " \
 #   need to map. 32 bits -> 4 GB, 33 bits -> 8 GB.
 # CFG_DT: non-secure and secure devices trees can be accessed by OPTEE core to get some platform
 #   configuration information.
-EXTRA_OEMAKE += " \
+# CFG_TEE_CORE_LOG_LEVEL: increase logging level to 'error + info + debug'
+EXTRA_OEMAKE:append = " \
     CFG_CORE_ARM64_PA_BITS=33 \
     CFG_DT=y \
+    CFG_TEE_CORE_LOG_LEVEL=3 \
 "
