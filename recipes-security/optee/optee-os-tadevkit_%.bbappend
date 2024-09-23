@@ -1,4 +1,4 @@
 require optee-os-rpi.inc
 
-# Tell OPTEE that this machine is compatible
+# OPTEE is compatible with our machine
 COMPATIBLE_MACHINE = "raspberrypi4-64-optee"

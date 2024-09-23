@@ -1,6 +1,9 @@
 require optee-os-rpi.inc
 
-# Install the TAs
+# OPTEE is compatible with our machine
+COMPATIBLE_MACHINE = "raspberrypi4-64-optee"
+
+# Install the TAs provided by OPTEE-OS
 do_install:append() {
     install -d ${D}${nonarch_base_libdir}/optee_armtz
     install -m 0644 ${B}/export-ta_arm64/ta/*.ta ${D}/${nonarch_base_libdir}/optee_armtz/

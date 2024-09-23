@@ -12,6 +12,7 @@ PACKAGES = "\
 RDEPENDS:${PN}-optee = "\
     optee-client \
     optee-examples \
+    optee-test \
 "
 
 RDEPENDS:${PN}-tools = "\
