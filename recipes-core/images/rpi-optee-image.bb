@@ -2,7 +2,7 @@ require recipes-core/images/core-image-minimal.bb
 
 DESCRIPTION = "Raspberry Pi with OPTEE image"
 
-IMAGE_FEATURES:append = " ssh-server-openssh"
+IMAGE_FEATURES:append = " package-management ssh-server-openssh"
 
 IMAGE_INSTALL:append = " libstdc++ mtd-utils openssl"
 
