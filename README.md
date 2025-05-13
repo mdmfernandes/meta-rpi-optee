@@ -4,9 +4,24 @@ WARNING: Currently it only supports RaspberryPi 64-bit
 
 ## Dependencies
 
-- [openembedded-core](https://git.openembedded.org/openembedded-core)
+- meta-oe, provided by [meta-openembedded](https://git.openembedded.org/meta-openembedded)
 - [meta-arm](https://git.yoctoproject.org/meta-arm)
 - [meta-raspberrypi](https://git.yoctoproject.org/meta-raspberrypi)
+
+Example of `BBLAYERS` (YMMV):
+
+```bitbake
+BBLAYERS ?= " \
+  /path/to/yocto/poky/meta \
+  /path/to/yocto/poky/meta-poky \
+  /path/to/yocto/poky/meta-yocto-bsp \
+  /path/to/yocto/meta-openembedded/meta-oe \
+  /path/to/yocto/meta-arm/meta-arm-toolchain \
+  /path/to/yocto/meta-arm/meta-arm \
+  /path/to/yocto/meta-raspberrypi \
+  /path/to/yocto/meta-rpi-optee \
+  "
+```
 
 ## Build image
 
@@ -23,7 +38,7 @@ bitbake rpi-optee-image
 
 ## Flash the SDCARD
 
-Considering that the SDCARD is */dev/sda*.
+Considering that the SDCARD is _/dev/sda_.
 
 ```bash
 cd <build-dir>
