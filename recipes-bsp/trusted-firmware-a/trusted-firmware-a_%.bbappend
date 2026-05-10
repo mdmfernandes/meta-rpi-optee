@@ -1,18 +1,18 @@
 # Tell ATF that raspberrypi4-64-optee is a compatible machine
-COMPATIBLE_MACHINE = "raspberrypi4-64-optee"
+COMPATIBLE_MACHINE:raspberrypi4-64-optee = "raspberrypi4-64-optee"
 
 # coreutils-native is required for the "truncate" command
-DEPENDS:append = " optee-os coreutils-native"
+DEPENDS:append:raspberrypi4-64-optee = " optee-os coreutils-native"
 
 # Set compiler options
-TFA_PLATFORM = "rpi4"
-TFA_SPD = "opteed"
-TFA_DEBUG = "1"
-TFA_BUILD_TARGET = "bl31"
+TFA_PLATFORM:raspberrypi4-64-optee = "rpi4"
+TFA_SPD:raspberrypi4-64-optee = "opteed"
+TFA_DEBUG:raspberrypi4-64-optee = "1"
+TFA_BUILD_TARGET:raspberrypi4-64-optee = "bl31"
 
 # Create the bl31 binary that will load OPTEE before the REE
 # NOTE: RECIPE_SYSROOT points to the directory that holds all files populated from recipes specified in DEPENDS
-do_deploy:append() {
+do_deploy:append:raspberrypi4-64-optee() {
     cp ${D}/firmware/bl31.bin ${WORKDIR}/bl31-pad.tmp
     truncate --size=128K ${WORKDIR}/bl31-pad.tmp
     # tee-pager_v2.bin is the OPTEE binary

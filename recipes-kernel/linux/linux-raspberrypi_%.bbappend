@@ -1,13 +1,12 @@
-FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
+FILESEXTRAPATHS:prepend:raspberrypi4-64-optee := "${THISDIR}/files:"
 
-SRC_URI:append = " \
+SRC_URI:append:raspberrypi4-64-optee = " \
     file://kernel-optee.cfg \
     file://dto/optee-fix.dts \
 "
 
 # Add custom dts files to the kernel dts overlays source, for compiling them during do_compile
-do_kernel_add_custom_overlays() {
- cp ${WORKDIR}/dto/optee-fix.dts ${S}/arch/arm64/boot/dts/overlays
+# NOTE: the overlay files must end with "-overlay.dts"
+do_compile:prepend:raspberrypi4-64-optee() {
+ cp ${WORKDIR}/sources/dto/optee-fix.dts ${S}/arch/arm64/boot/dts/overlays/optee-fix-overlay.dts
 }
-
-addtask do_kernel_add_custom_overlays before do_compile after do_configure

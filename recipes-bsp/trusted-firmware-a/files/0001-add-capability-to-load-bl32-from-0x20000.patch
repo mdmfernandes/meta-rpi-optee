@@ -1,6 +1,8 @@
-diff --git a/plat/rpi/common/rpi4_bl31_setup.c b/plat/rpi/common/rpi4_bl31_setup.c
---- a/plat/rpi/common/rpi4_bl31_setup.c
-+++ b/plat/rpi/common/rpi4_bl31_setup.c
+Upstream-Status: Pending
+
+diff --git a/plat/rpi/rpi4/rpi4_bl31_setup.c b/plat/rpi/rpi4/rpi4_bl31_setup.c
+--- a/plat/rpi/rpi4/rpi4_bl31_setup.c
++++ b/plat/rpi/rpi4/rpi4_bl31_setup.c
 @@ -132,6 +132,27 @@ void bl31_early_platform_setup2(u_register_t arg0, u_register_t arg1,
  	/* Initialize the console to provide early debug support. */
  	rpi3_console_init();
